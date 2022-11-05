@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
-data_frame = pd.read_csv('all_e.csv')
+data_frame = pd.read_csv('../all_e.csv')
  
 LABEL_COLOR_MAP = {0 : 'b', 1 : 'r', 2 : 'g', 3 : 'c',4 : 'm', 5 : 'y', 6 : 'lime'}
 

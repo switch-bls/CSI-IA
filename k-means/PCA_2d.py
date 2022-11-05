@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 
-data_frame = pd.read_csv('all_e.csv')
+data_frame = pd.read_csv('../all_e.csv')
 
 model = PCA(n_components = 2)
 model.fit_transform(data_frame)
