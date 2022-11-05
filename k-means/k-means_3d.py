@@ -4,11 +4,11 @@ from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from matplotlib import animation
 import numpy as np
-data_frame = pd.read_csv('../all_e.csv')
+data_frame = pd.read_csv('../all_e_10k.csv')
  
 LABEL_COLOR_MAP = {0 : 'b', 1 : 'r', 2 : 'g', 3 : 'c',4 : 'm', 5 : 'y', 6 : 'lime'}
 
-model = KMeans(n_clusters = 7).fit(data_frame)
+model = KMeans(n_clusters = 3).fit(data_frame)
 
 label_color = [LABEL_COLOR_MAP[l] for l in model.predict(data_frame)]
 fig = plt.figure()
