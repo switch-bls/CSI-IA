@@ -26,7 +26,7 @@ print ("standardization : ok")
 for col in df.columns:
     df[col] = normalize_with_min_max_scaling(df[col])
 
-print ("standardization : ok")
+print ("normalization : ok")
 
 df.to_csv("final_"+csv_file, index = False)
 
