@@ -5,11 +5,9 @@ from sklearn.decomposition import PCA
 
 data_frame = pd.read_csv('../data/final_data.csv')
  
-LABEL_COLOR_MAP = {0 : 'b', 1 : 'r', 2 : 'g', 3 : 'c',4 : 'm', 5 : 'y', 6 : 'lime'}
-
 model = KMeans(n_clusters = 7).fit(data_frame)
 
-label_color = [LABEL_COLOR_MAP[l] for l in model.predict(data_frame)]
+label_color = model.predict(data_frame)
 
 
 model = PCA(n_components = 2)

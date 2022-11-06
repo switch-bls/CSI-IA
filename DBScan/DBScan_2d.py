@@ -6,10 +6,10 @@ from matplotlib import animation
 import numpy as np
 from sklearn.cluster import DBSCAN
 
-data_frame = pd.read_csv('../all_e.csv')
+data_frame = pd.read_csv('../data/1000_final_data.csv')
  
 fig = plt.figure()
-clustering = DBSCAN(eps=1700, min_samples=35).fit(data_frame)
+clustering = DBSCAN(eps=1500, min_samples=20).fit(data_frame)
 labels = clustering.labels_
 
 print(labels)

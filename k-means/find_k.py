@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
-data_frame = pd.read_csv('../all_e.csv')
+data_frame = pd.read_csv('../data/final_data.csv')
 
 inertia = []
 K_range = range(1,30)

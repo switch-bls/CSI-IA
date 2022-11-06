@@ -5,9 +5,9 @@ import numpy as np
 
 
 
-dataset = pd.read_csv('../all_e.csv')
+dataset = pd.read_csv('../data/1000_final_data.csv')
 
-neighbors = NearestNeighbors(n_neighbors=35)
+neighbors = NearestNeighbors(n_neighbors=10)
 neighbors_fit = neighbors.fit(dataset)
 distances, indices = neighbors_fit.kneighbors(dataset)
 

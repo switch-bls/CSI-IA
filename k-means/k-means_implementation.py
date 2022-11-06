@@ -84,9 +84,9 @@ def kmeansImp(nb_centroids, data):
 
     return colors
 
-data_frame = pd.read_csv('../all_e_10k.csv')
+data_frame = pd.read_csv('../data/final_data.csv')
 
-c = kmeansImp(3, data_frame)
+c = kmeansImp(10, data_frame)
 
 model = PCA(n_components = 3)
 
