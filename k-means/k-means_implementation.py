@@ -86,7 +86,7 @@ def kmeansImp(nb_centroids, data):
 
 data_frame = pd.read_csv('../data/final_data.csv')
 
-c = kmeansImp(10, data_frame)
+c = kmeansImp(9, data_frame)
 
 model = PCA(n_components = 3)
 

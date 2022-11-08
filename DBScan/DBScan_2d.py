@@ -12,7 +12,9 @@ fig = plt.figure()
 clustering = DBSCAN(eps=1500, min_samples=20).fit(data_frame)
 labels = clustering.labels_
 
-print(labels)
+data_frame['DBScan'] = labels
+data_frame.to_csv("all_e_partition", index = False)
+
 pca = PCA(n_components=2)
 pca.fit(data_frame)
 data_frame_reduced = pca.fit_transform(data_frame)
