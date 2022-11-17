@@ -1,23 +1,24 @@
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
+from mlxtend.data import iris_data
+from mlxtend.plotting import plot_pca_correlation_graph
 import numpy as np
 import pandas as pd
+from scipy.stats import pearsonr
+import math
+data_frame = pd.read_csv('final_data_partition.csv')
 
-import matplotlib.pyplot as plt
+feature_names = [data_frame.columns.values]
 
-
-# load dataset as pandas dataframe
-df = pd.read_csv('../data/final_data.csv')
-pca_out = PCA().fit(df)
-
-loadings = pca_out.components_
-num_pc = pca_out.n_features_
-model = PCA(n_components = 3)
-model.fit_transform(df)
-
-pca_data_frame = plt.axes(projection='3d')
-for a in range(len(df.column)):
-    label = df.column.values[a]
-    ax.text(model[x], y, z, label, zdir)
-
-plt.show()
+df = pd.DataFrame()
+for i in range (7):
+    col_name = []
+    tab = []
+    for index, values in data_frame.iteritems():
+        corr, _ = pearsonr(data_frame[index],data_frame['k-means'+str(i)])
+        if corr >= 0.15:
+            col_name.append(data_frame[index].name)
+            tab.append(round(corr,2))
+        print(str(data_frame[index].name) + " " + str(round(corr,2)))
+    df = pd.DataFrame()    
+    df['col'+str(i)] = col_name
+    df['k-means'+str(i)] = tab
+    df.to_csv("cor"+str(i)+".csv", index = False)

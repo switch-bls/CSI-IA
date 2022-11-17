@@ -13,7 +13,7 @@ clustering = DBSCAN(eps=1500, min_samples=20).fit(data_frame)
 labels = clustering.labels_
 
 data_frame['DBScan'] = labels
-data_frame.to_csv("all_e_partition", index = False)
+data_frame.to_csv("all_e_partition.csv", index = False)
 
 pca = PCA(n_components=2)
 pca.fit(data_frame)

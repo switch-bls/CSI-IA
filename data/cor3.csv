@@ -1,0 +1,14 @@
+col3,k-means3
+brand_vauxhall,0.86
+model_Adam,0.2
+model_Astra,0.32
+model_Corsa,0.53
+model_Crossland X,0.17
+model_Mokka,0.15
+model_Mokka X,0.34
+model_Viva,0.19
+model_Zafira,0.18
+Petrol,0.34
+Manual,0.26
+DBScan,0.34
+k-means3,1.0

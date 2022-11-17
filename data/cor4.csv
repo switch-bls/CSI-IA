@@ -1,0 +1,10 @@
+col4,k-means4
+brand_merc,0.16
+brand_toyota,0.16
+Diesel,0.3
+Hybrid,0.39
+Automatic,0.79
+price,0.18
+mpg,0.16
+engineSize,0.29
+k-means4,1.0
