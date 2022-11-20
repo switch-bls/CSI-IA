@@ -11,7 +11,7 @@ def normalize_with_min_max_scaling(series):
 if len(sys.argv) > 1:
     csv_file = sys.argv[1]
 else:
-    csv_file = 'no_model_e.csv'
+    csv_file = 'no_model_no_index_no_outlier.csv'
 
 df = pa.read_csv(csv_file, low_memory=False)
 

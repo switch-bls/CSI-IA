@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 from matplotlib import animation
 import numpy as np
 
-data_frame = pd.read_csv('../data/1000_final_no_model_e.csv')
+data_frame = pd.read_csv('../data/1000_final_no_qualite_no_outlier.csv')
  
 model = KMeans(n_clusters = 7).fit(data_frame)
 
