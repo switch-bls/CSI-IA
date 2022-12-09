@@ -1,6 +1,6 @@
 import pandas
 import numpy as np
-df = pandas.read_csv("no_model_no_index_e.csv")
+df = pandas.read_csv("all_e.csv")
 
 numeric_col = ['year','price','mileage','mpg','engineSize']
 
@@ -16,5 +16,8 @@ for col in [numeric_col]:
         df.loc[df[x] < min,x] = np.nan
         df.loc[df[x] > max,x] = np.nan
     df = df.dropna(axis = 0)
-df.to_csv("no_model_no_index_no_outlier.csv", index = False)
+df.drop(columns = ["price"])
+df.to_csv("no_index_no_outlier_trainning.csv", index = False)
+
+
 print(len(df.index))

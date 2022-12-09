@@ -16,11 +16,11 @@ n = 2
 for i in range(n):
     print("i:",i)
     size = len(data_frame.index)
-    nb_elements_by_cluster = int(size//n)/size
+    nb_elem = int(size//n)/size
     couple = []
     for j in range(n):
         #couple.append([data_frame.iloc[nb_elements_by_cluster*(j):nb_elements_by_cluster*(j+1),:],target.iloc[nb_elements_by_cluster*(j):nb_elements_by_cluster*(j+1),:] ])
-        couple.append([data_frame.sample(frac = nb_elements_by_cluster),target.sample(frac = nb_elements_by_cluster)])
+        couple.append([(data_frame.sample(frac = nb_elem)),target.sample(frac = nb_elem)])
     test_data = couple.pop(i)
     for c in couple:
         regr.fit(c[0],c[1])
