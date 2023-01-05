@@ -60,20 +60,13 @@ for i in range(depth):
                 #On mets a jour la vatiable a minisé
                 #On les sauvegardes dans Son_nodes
                 if (len(new_left_node.population) != 0) or (len(new_right_node.population) != 0):
-                    #print(f"looking at {column}={median}, CV1={new_left_node.CV()} CV2={new_right_node.CV()}")
                     min_std += (len(new_left_node.population)/len(node.population))*new_left_node.CV()
                     min_std += (len(new_right_node.population)/len(node.population))*new_right_node.CV()
-                
                     son_nodes = [new_left_node,new_right_node]
-                    #else :print(" Son_node"+str(son_nodes))
-
                     information_gain = node.CV() - min_std
-                    #print(f"Weighted average entropy for {column} is {min_std}, and information gain is {information_gain}")
                     if (information_gain > max_information_gain):
                         max_information_gain = information_gain
                         children = son_nodes
-                    #else: print(information_gain)
-                #else: print (str(len(new_left_node.population)+"   "+str(len(new_right_node.population)))) 
 
             if ( max_information_gain > min_information_gain ):
                 node.children = children    
